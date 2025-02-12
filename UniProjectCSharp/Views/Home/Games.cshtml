@@ -1,0 +1,20 @@
+﻿@model IEnumerable<Games>  // Taking Iterable data with objects of Model-type Games
+
+@{
+    ViewData["Title"] = "Browse Games";
+}
+
+<p style="font-size: 2rem; font-weight: bold; text-align: center; color: #f5f5f5; margin-top: 4rem;">Select a game to continue...</p>
+
+<div class="gamesContainer">
+    <ul class="gamesList">
+        @foreach (var game in Model)
+        {
+            <li style="background-image: url('@game.Img'); background-size: cover; background-position: center;"
+                onclick="window.location.href='/Home/Game/?Id=@game.Id'">
+                <p class="name">@game.Name</p>
+                <p class="desc">@game.Description</p>
+            </li>
+        }
+    </ul>
+</div>

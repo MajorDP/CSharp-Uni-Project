@@ -1,0 +1,31 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    string error = Context.Request.Query["error"];
+    ViewData["Title"] = "Register";
+}
+
+@model UniProjectCSharp.Models.User
+<div class="authWrapper">
+    <p>Register</p>
+
+    <form asp-action="OnRegister">
+    <div class="authData">
+        <div>
+            <label for="email">E-mail</label>
+            <input id="email" placeholder="Enter your e-mail here" asp-for="Email" />
+        </div>
+        <div>
+            <label for="pass">Password</label>
+            <input id="pass" placeholder="Enter your password here" asp-for="Password" />
+        </div>
+        <div> 
+             <label for="repass">Repeat Password</label> 
+             <input id="repass" placeholder="Repeat your password here" asp-for="RepeatPassword" />
+            </div>
+            <div style="color:red; font-weight:500; display:flex; align-items:center">@error</div>
+        <button type="submit">Register</button>
+    </div>
+    </form>
+</div>

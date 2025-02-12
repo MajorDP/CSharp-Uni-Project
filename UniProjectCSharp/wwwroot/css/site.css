@@ -1,0 +1,658 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    background: linear-gradient(to top, #1C325B, black);
+    color: white;
+    margin-bottom: 60px;
+}
+
+/* NAVIGATION */
+.navigation {
+    background-color: #1c1c1c;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+    .navigation > div {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .navigation a {
+        color: mediumpurple;
+        font-size: 1.8rem;
+        font-weight: bold;
+        text-decoration: none;
+        margin-right: 2rem;
+        transition: color 0.3s ease;
+    }
+
+        .navigation a:hover {
+            color: #ccc;
+        }
+
+.navBar {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+    .nav li a {
+        color: white;
+        font-size: 1.3rem;
+        font-weight: 500;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+        .nav li a:hover {
+            background-color: rebeccapurple;
+            color: white;
+        }
+
+
+
+/* USER AUTH */
+.authWrapper {
+    width: 40%;
+    margin: auto;
+    margin-top: 10%;
+    background-color: #1c1c1c;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+    color: white;
+}
+
+
+    .authWrapper p {
+        font-size: 2rem;
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 1.5rem;
+        color: rebeccapurple;
+    }
+
+.authData {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+}
+
+    .authData div {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        padding: 0.5rem 0;
+        background-color: transparent;
+        font-size: 1rem;
+    }
+
+        .authData div input {
+            width: 100%;
+            padding: 0.5rem;
+            font-size: 1rem;
+            border: 1px solid #7d5ba6;
+            border-radius: 4px;
+            background-color: #2e2e2e;
+            color: white;
+        }
+
+            .authData div input::placeholder {
+                font-size: 0.9rem;
+                color: #aaa;
+            }
+
+        .authData div label {
+            margin-bottom: 0.5rem;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+    .authData button {
+        width: 50%;
+        margin: auto;
+        padding: 0.7rem;
+        font-size: 1rem;
+        font-weight: bold;
+        border: none;
+        border-radius: 4px;
+        background-color: rebeccapurple;
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+        .authData button:hover {
+            background-color: #9f7dcc;
+        }
+
+
+
+/* HOME */
+
+.homeContainer {
+    height: 30rem;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    background-color: #1c1c1c;
+    color: white;
+    padding: 2rem;
+    margin-top: 8rem;
+}
+
+.info {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    color: white;
+    text-align: center;
+}
+
+.infoTextPrimary {
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1.4;
+    margin-top: 0;
+    margin-bottom: 0;
+    width: 100%;
+    color: rebeccapurple;
+}
+
+.infoTextSecondary {
+    padding-top: 0.2rem;
+    font-size: 1.5rem;
+    color: #aaa;
+}
+
+
+.gameShow {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid white;
+    border-radius: 8px;
+}
+
+.currentGameInfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+
+
+.gameInfo a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 50%;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.gameInfo div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    flex-grow: 2;
+}
+.gameInfo div div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    flex-grow: 2;
+}
+
+    .gameInfo div p {
+        margin: 5px 0;
+        font-size: 1.1rem;
+    }
+
+        .gameInfo div p:first-child {
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+
+
+/* GAMES PAGE */
+
+.gamesContainer {
+    width: 100%;
+    margin: auto;
+    margin-top: 4rem;
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: #1c1c1c;
+}
+
+.gamesList {
+    display: flex;
+    list-style-type: none;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 0;
+    width: 100%;
+    margin: auto;
+}
+
+    .gamesList li {
+        width: 30%;
+        height: 10rem;
+        margin: 0.5rem;
+        margin-top: 1rem;
+        border: 1px solid white;
+        border-radius: 8px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        color: white;
+        text-align: center;
+        background-size: cover;
+        background-position: center;
+        padding: 1rem;
+    }
+
+        .gamesList li::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0);
+            transition: background 0.3s ease;
+            z-index: 1;
+        }
+
+        .gamesList li:hover::before {
+            background: rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+        }
+
+.name,
+.desc {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    text-align: center;
+    color: snow;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease;
+    opacity: 0;
+    display: block;
+    cursor: pointer;
+}
+
+.name {
+    font-size: 1.6rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    bottom: 60%;
+    transform: translateY(20px);
+}
+
+.desc {
+    font-size: 1.2rem;
+    font-style: italic;
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+    bottom: 10px;
+    transform: translateY(40px);
+}
+
+.gamesList li:hover .name,
+.gamesList li:hover .desc {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* CHOSEN GAME */
+
+
+.gameContainer {
+    width: 90%;
+    height: 40rem;
+    
+    margin:auto;
+    margin-top: 8rem;
+    padding: 2rem;
+    
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    border-radius: 16px;
+    background-color: #1c1c1c;
+    color: #f5f5f5;
+}
+
+.gameWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    
+    gap: 2rem;
+}
+
+.gameImgContainer {
+    width: 600px;
+    height: 500px;
+}
+
+.gameImg {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.currentGameInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+    .currentGameInfo button {
+        width: 30%;
+        height: 4rem;
+        background-color: green;
+        color: white;
+        border-radius: 6px;
+        border: 1px solid #262626;
+        font-size: 1.2rem;
+        margin: auto;
+        transition: 0.3s ease-in-out;
+    }
+        .currentGameInfo button:hover {
+            background-color: lightgreen;
+            color: black;
+            transform: scale(1.1);
+        }
+
+.currentGameName {
+    text-align: left;
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+    
+    color: #f5f5f5;
+
+    margin: 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #3e3e3e;
+}
+
+.currentGameDesc {
+    margin: 0;
+    padding: 1rem;
+    
+    font-size: 1.2rem;
+    line-height: 1.6;
+    text-align: left;
+    
+    color: #d3d3d3;
+    background: #262626;
+    
+    border-radius: 8px;
+    border: 1px solid #3e3e3e;
+}
+
+.currentGameStats {
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    color: #f5f5f5;
+    
+    padding: 1rem 4rem;
+    margin-top: 2rem;
+    border-top: 2px solid #3e3e3e;
+}
+
+.upVote {
+    margin-left:10px;
+    cursor: pointer;
+    color: lightgreen;
+    transition: 0.3s ease-in-out;
+}
+
+.downVote {
+    margin-right: 10px;
+    cursor: pointer;
+    color: lightcoral;
+    transition: 0.3s ease-in-out
+}
+
+    .upVote:hover, .downVote:hover {
+        transform: scale(2);
+    }
+
+
+
+/* USER PAGE */
+
+.profileContainer {
+    width: 90%;
+    background-color: #1c1c1c;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem auto;
+    border-radius: 12px;
+    padding: 1rem;
+    box-sizing: border-box;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.userImg {
+    width: 35%;
+    margin:auto;
+    text-align: center;
+    padding-right: 2rem;
+}
+
+.userImg img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid black;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.userImg p {
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: #ccc;
+}
+
+.userInfo {
+    width: 60%;
+    background-color: #2a2a2a;
+    padding: 1rem;
+    border-radius: 12px;
+}
+
+.userEmail {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.userGamesContainer {
+    margin-top: 1rem;
+    max-height: 400px; 
+    overflow-y: scroll; 
+
+    scroll-behavior:smooth;
+}
+
+    .userGamesContainer::-webkit-scrollbar {
+        width: 10px; 
+        height: 10px; 
+    }
+
+  
+    .userGamesContainer::-webkit-scrollbar-thumb {
+        background-color: dimgray; 
+        border: 3px solid #f1f1f1; 
+    }
+
+    .userGamesContainer::-webkit-scrollbar-track-piece {
+        background-color: white; 
+    }
+
+    
+
+.userGamesList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+    .userGamesList li {
+        width: 180px;
+        height: 160px;
+        border-radius: 8px;
+        overflow: hidden;
+        position: relative;
+        background-size: cover;
+        background-position: center;
+        cursor: pointer;
+        margin: 0.4rem;
+        border:1px solid white;
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+.userGamesList li:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.gameName {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 1.1rem;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-top: 2px solid white;
+    font-weight: bold;
+}
+
+.gameName:hover {
+    color: #ffcc00;
+}
+
+
+/* VOTE PAGE */
+.voteWrapper {
+    width: 20%;
+    margin: auto;
+    margin-top: 10rem;
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1c1c1c;
+    text-align: center;
+}
+
+.voteMessage {
+    background: #1c1c1c;
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+
+.voteMessage p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.backButton {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: #4CAF50; 
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+    .backButton:hover {
+        background-color: #45a049;
+        transform: scale(1.05);
+    }

@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Games>
+@{
+    var userEmail = ViewData["userEmail"] as string;
+    var userRegistrationDate = ViewData["userRegistrationDate"] as string;
+    var userGames = ViewData["savedGames"] as List<int>; // List of saved game IDs
+
+    var user = new
+    {
+        email = "asura@abv.bg",
+        registrationDate = "25.11.2024",
+        userImg = "https://platform.polygon.com/wp-content/uploads/sites/2/chorus/assets/4442313/asura_large_red.jpg?quality=90&strip=all&crop=19.43359375,0,61.1328125,100",
+        games = new[]
+        {
+            new { Id = 0, Name = "Elden Ring", Img = "https://image.api.playstation.com/vulcan/img/rnd/202111/0506/hcFeWRVGHYK72uOw6Mn6f4Ms.jpg" },
+            new { Id = 1, Name = "The Legend of Zelda", Img = "https://www.zelda.com/breath-of-the-wild/assets/icons/BOTW-Share_icon.jpg" },
+            new { Id = 0, Name = "Elden Ring", Img = "https://image.api.playstation.com/vulcan/img/rnd/202111/0506/hcFeWRVGHYK72uOw6Mn6f4Ms.jpg" },
+            new { Id = 1, Name = "The Legend of Zelda", Img = "https://www.zelda.com/breath-of-the-wild/assets/icons/BOTW-Share_icon.jpg" },
+            new { Id = 0, Name = "Elden Ring", Img = "https://image.api.playstation.com/vulcan/img/rnd/202111/0506/hcFeWRVGHYK72uOw6Mn6f4Ms.jpg" },
+            new { Id = 1, Name = "The Legend of Zelda", Img = "https://www.zelda.com/breath-of-the-wild/assets/icons/BOTW-Share_icon.jpg" },
+            new { Id = 0, Name = "Elden Ring", Img = "https://image.api.playstation.com/vulcan/img/rnd/202111/0506/hcFeWRVGHYK72uOw6Mn6f4Ms.jpg" },
+            new { Id = 1, Name = "The Legend of Zelda", Img = "https://www.zelda.com/breath-of-the-wild/assets/icons/BOTW-Share_icon.jpg" },
+        },
+    };
+}
+
+<div class="profileContainer">
+    <div class="userImg">
+        <img src="@user.userImg" alt="User Image" />
+        <p>Member since: @userRegistrationDate</p>
+    </div>
+    <div class="userInfo">
+        <p class="userEmail">@userEmail</p>
+        <p style="text-align:center; margin-top:2rem;">Currently saved games</p>
+        <div class="userGamesContainer">
+            <ul class="userGamesList">
+                @foreach (var game in Model)
+                {
+                    // Check if the game ID is in the saved games list
+                    if (userGames.Contains(game.Id) == true)
+                    {
+                        <li class="gameItem" style="background-image: url('@game.Img'); background-size: cover; background-position: center;" onclick="window.location.href='/Home/Game/?Id=@game.Id'">
+                            <p class="gameName">@game.Name</p>
+                        </li>
+                    }
+                }
+            </ul>
+        </div>
+    </div>
+</div>

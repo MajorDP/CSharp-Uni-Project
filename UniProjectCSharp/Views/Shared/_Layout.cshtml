@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - UniProjectCSharp</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/UniProjectCSharp.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header class="navigation">
+            <div class="">
+                <a asp-area="" asp-controller="Home" asp-action="Index">Game Reviewer</a>
+                <div class="navBar">
+                    <ul class="nav">
+                    @* Only show "Games" and "My Profile" if the user is logged in *@
+                    @if (ViewData["IsLoggedIn"] != null && (bool)ViewData["IsLoggedIn"] == true)
+                    {
+                        <li>
+                            <a asp-area="" asp-controller="Home" asp-action="Games">Games</a>
+                        </li>
+                        <li>
+                            <a asp-area="" asp-controller="Home" asp-action="Profile">My Profile</a>
+                        </li>
+                        <li>
+                            <a asp-area="" asp-controller="Home" asp-action="Logout">Log out</a>
+                        </li>
+                    }else{
+                        <li>
+                            <a asp-area="" asp-controller="Home" asp-action="Login">Log in</a>
+                        </li>
+                        <li>
+                            <a asp-area="" asp-controller="Home" asp-action="Register">Register</a>
+                        </li>
+                    }
+                    </ul>
+                </div>
+            </div>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

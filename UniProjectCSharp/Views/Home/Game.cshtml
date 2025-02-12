@@ -1,0 +1,51 @@
+﻿@model Games  // This represents a single Game object
+
+@{
+    ViewData["Title"] = Model.Name;  // Set the page title dynamically to the game's name
+    var userGames = ViewData["savedGames"] as List<int>; // List of saved game IDs
+}
+
+<div class="gameContainer">
+    <div class="gameWrapper">
+        <div class="gameImgContainer">
+            <img src="@Model.Img" alt="@Model.Name" class="gameImg" />
+        </div>
+        <div class="currentGameInfo">
+            <p class="currentGameName">@Model.Name</p>
+            <p class="currentGameDesc">@Model.Description</p>
+            <a href="/Home/AddGame?id=@Model.Id" style="border:none; background:none; cursor:pointer;">
+            <button disabled="@userGames.Contains(Model.Id)">
+                @if (userGames.Contains(Model.Id))
+                {
+                    @:Already saved
+                }
+                else
+                {
+                    @:Save to games
+                }
+            </button>
+            </a>
+        </div>
+    </div>
+    <div class="currentGameStats">
+        <p>
+            <!-- Downvote Link -->
+            <a href="/Home/UpdateRating?id=@Model.Id&vote=downvote" style="border:none; background:none; cursor:pointer;">
+                <svg class="downVote" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+            </a>
+
+            Rating: <span id="currentRating">@Model.Rating</span>
+
+            <!-- Upvote Link -->
+            <a href="/Home/UpdateRating?id=@Model.Id&vote=upvote" style="border:none; background:none; cursor:pointer;">
+                <svg class="upVote" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+            </a>
+        </p>
+        <p>Average price: <span style="color: lightgreen">$@Model.AvgPrice</span></p>
+    </div>
+</div>

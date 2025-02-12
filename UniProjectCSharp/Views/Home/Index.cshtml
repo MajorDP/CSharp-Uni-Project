@@ -1,0 +1,54 @@
+﻿@model List<Games>
+
+@{
+    ViewData["Title"] = "Home Page";
+
+
+    // Get the current index from the query string, default to 0 if not provided or invalid
+    int currentIndex = Convert.ToInt32(Context.Request.Query["currentIndex"].FirstOrDefault() ?? "0");
+
+    // Ensure the currentIndex is within bounds (0 to games.Length - 1)
+    currentIndex = (currentIndex < 0) ? Model.Count - 1 : currentIndex;  // Prevent negative index
+    currentIndex = (currentIndex >= Model.Count) ? 0 : currentIndex;  // Prevent index out of range
+
+    // Get the current game based on the validated index
+    var currentGame = Model[currentIndex];
+}
+
+<div>
+
+    <div class="homeContainer">
+        <div class="info">
+            <div>
+                <p class="infoTextPrimary">Discover all kinds of games</p>
+                <p class="infoTextSecondary">Take a quick look into some of our finest selections</p>
+            </div>
+        </div>
+
+        <div class="gameShow" style="background-image: url('@currentGame.Img'); background-size: cover; background-position: center;">
+            <div class="gameInfo">
+                <div>
+
+                <!-- Left Arrow - Go to Previous Game -->
+                <a href="?currentIndex=@((currentIndex - 1 + Model.Count) % Model.Count)" id="arrowLeft">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                        <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6z" />
+                    </svg>
+                </a>
+
+                <div>
+                    <p>@currentGame.Name, @currentGame.Rating</p>
+                    <p>@currentGame.Description</p>
+                </div>
+
+                <!-- Right Arrow - Go to Next Game -->
+                <a href="?currentIndex=@((currentIndex + 1) % Model.Count)" id="arrowRight">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                        <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z" />
+                    </svg>
+                </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
