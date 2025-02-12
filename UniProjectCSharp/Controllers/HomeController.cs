@@ -318,6 +318,7 @@ namespace UniProjectCSharp.Controllers
             ViewData["savedGames"] = currentUserCookie.SavedGames;
             ViewData["IsLoggedIn"] = true;
 
+
             try
             {
                 var games = await _gameService.GetGames();

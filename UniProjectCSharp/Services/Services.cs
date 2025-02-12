@@ -42,9 +42,8 @@ namespace UniProjectCSharp.Services
             }
             catch (Exception ex)
             {
-                // Log or handle the exception
                 Console.WriteLine($"Error fetching games: {ex.Message}");
-                throw; // Optionally rethrow the exception
+                throw;
             }
         }
 
