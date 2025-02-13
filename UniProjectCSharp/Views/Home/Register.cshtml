@@ -18,11 +18,11 @@
         </div>
         <div>
             <label for="pass">Password</label>
-            <input id="pass" placeholder="Enter your password here" asp-for="Password" />
+            <input type="password" id="pass" placeholder="Enter your password here" asp-for="Password" />
         </div>
         <div> 
-             <label for="repass">Repeat Password</label> 
-             <input id="repass" placeholder="Repeat your password here" asp-for="RepeatPassword" />
+             <label for="repass">Repeat Password</label>
+                <input type="password" id="repass" placeholder="Repeat your password here" asp-for="RepeatPassword" />
             </div>
             <div style="color:red; font-weight:500; display:flex; align-items:center">@error</div>
         <button type="submit">Register</button>

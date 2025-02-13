@@ -4,28 +4,28 @@
     var userRegistrationDate = ViewData["userRegistrationDate"] as string;
     var userGames = ViewData["savedGames"] as List<int>; // List of saved game IDs
 
-    var user = new
-    {
-        email = "asura@abv.bg",
-        registrationDate = "25.11.2024",
-        userImg = "https://platform.polygon.com/wp-content/uploads/sites/2/chorus/assets/4442313/asura_large_red.jpg?quality=90&strip=all&crop=19.43359375,0,61.1328125,100",
-        games = new[]
-        {
-            new { Id = 0, Name = "Elden Ring", Img = "https://image.api.playstation.com/vulcan/img/rnd/202111/0506/hcFeWRVGHYK72uOw6Mn6f4Ms.jpg" },
-            new { Id = 1, Name = "The Legend of Zelda", Img = "https://www.zelda.com/breath-of-the-wild/assets/icons/BOTW-Share_icon.jpg" },
-            new { Id = 0, Name = "Elden Ring", Img = "https://image.api.playstation.com/vulcan/img/rnd/202111/0506/hcFeWRVGHYK72uOw6Mn6f4Ms.jpg" },
-            new { Id = 1, Name = "The Legend of Zelda", Img = "https://www.zelda.com/breath-of-the-wild/assets/icons/BOTW-Share_icon.jpg" },
-            new { Id = 0, Name = "Elden Ring", Img = "https://image.api.playstation.com/vulcan/img/rnd/202111/0506/hcFeWRVGHYK72uOw6Mn6f4Ms.jpg" },
-            new { Id = 1, Name = "The Legend of Zelda", Img = "https://www.zelda.com/breath-of-the-wild/assets/icons/BOTW-Share_icon.jpg" },
-            new { Id = 0, Name = "Elden Ring", Img = "https://image.api.playstation.com/vulcan/img/rnd/202111/0506/hcFeWRVGHYK72uOw6Mn6f4Ms.jpg" },
-            new { Id = 1, Name = "The Legend of Zelda", Img = "https://www.zelda.com/breath-of-the-wild/assets/icons/BOTW-Share_icon.jpg" },
-        },
-    };
+    // var user = new
+    // {
+    //     email = "asura@abv.bg",
+    //     registrationDate = "25.11.2024",
+    //     userImg = "https:platform.polygon.com/wp-content/uploads/sites/2/chorus/assets/4442313/asura_large_red.jpg?quality=90&strip=all&crop=19.43359375,0,61.1328125,100",
+    //     games = new[]
+    //     {
+    //         new { Id = 0, Name = "Elden Ring", Img = "https:image.api.playstation.com/vulcan/img/rnd/202111/0506/hcFeWRVGHYK72uOw6Mn6f4Ms.jpg" },
+    //         new { Id = 1, Name = "The Legend of Zelda", Img = "https:www.zelda.com/breath-of-the-wild/assets/icons/BOTW-Share_icon.jpg" },
+    //         new { Id = 0, Name = "Elden Ring", Img = "https:image.api.playstation.com/vulcan/img/rnd/202111/0506/hcFeWRVGHYK72uOw6Mn6f4Ms.jpg" },
+    //         new { Id = 1, Name = "The Legend of Zelda", Img = "https:www.zelda.com/breath-of-the-wild/assets/icons/BOTW-Share_icon.jpg" },
+    //         new { Id = 0, Name = "Elden Ring", Img = "https:image.api.playstation.com/vulcan/img/rnd/202111/0506/hcFeWRVGHYK72uOw6Mn6f4Ms.jpg" },
+    //         new { Id = 1, Name = "The Legend of Zelda", Img = "https:www.zelda.com/breath-of-the-wild/assets/icons/BOTW-Share_icon.jpg" },
+    //         new { Id = 0, Name = "Elden Ring", Img = "https:image.api.playstation.com/vulcan/img/rnd/202111/0506/hcFeWRVGHYK72uOw6Mn6f4Ms.jpg" },
+    //         new { Id = 1, Name = "The Legend of Zelda", Img = "https:www.zelda.com/breath-of-the-wild/assets/icons/BOTW-Share_icon.jpg" },
+    //     },
+    // };
 }
 
 <div class="profileContainer">
     <div class="userImg">
-        <img src="@user.userImg" alt="User Image" />
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKFem0b3QKwZNYgZ3eCClFlnIlIn5V1nDJjw&s" alt="User Image" />
         <p>Member since: @userRegistrationDate</p>
     </div>
     <div class="userInfo">

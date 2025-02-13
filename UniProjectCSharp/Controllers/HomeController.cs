@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Newtonsoft.Json;
 using UniProjectCSharp.Models;
 using UniProjectCSharp.Services;
+using System.Text.RegularExpressions;
 
 namespace UniProjectCSharp.Controllers
 {
@@ -255,6 +256,17 @@ namespace UniProjectCSharp.Controllers
                 return RedirectToAction("Register", new { error = "Null data." });
             }
 
+            string emailPattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
+            if (!Regex.IsMatch(data.Email, emailPattern))
+            {
+                return RedirectToAction("Register", new { error = "Invalid email format." });
+            }
+
+            if(data.Password.Length < 6)
+            {
+                return RedirectToAction("Register", new { error = "Password must be at least 6 characters." });
+            }
+
             if (data.Email == null || data.Password == null || data.RepeatPassword == null)
             {
                 return RedirectToAction("Register", new { error = "Please enter all credentials." });
@@ -278,7 +290,7 @@ namespace UniProjectCSharp.Controllers
                 Email = data.Email,
                 Password = data.Password,
                 IsAdmin = false,
-                SavedGames = new List<int> { 1 } // Initializes with one saved game for example for the user
+                SavedGames = new List<int> { 1 }
             };
 
 
@@ -288,7 +300,6 @@ namespace UniProjectCSharp.Controllers
             var cookieOptions = new CookieOptions
             {
                 HttpOnly = true, // Make sure it's not accessible via JavaScript
-                Secure = true,   // Use this for production when using HTTPS
                 Expires = DateTime.Now.AddHours(1) // Set expiration for the cookie
             };
 
